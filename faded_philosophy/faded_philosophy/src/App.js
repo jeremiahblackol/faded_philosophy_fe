@@ -5,6 +5,7 @@ import { toneChecker } from './ApiCalls'
 
 const text = "Hello all you good people, I hope you are having a great day!"
 const angryText = "I hated all of the dumb shit"
+const aannaSentence = "I feel like the world is too rough, but I'm excited about tomorrow"
 
 class App extends Component {
   constructor() {
@@ -19,7 +20,7 @@ class App extends Component {
 
   
 toneRequest = () => {
-    toneChecker(angryText)
+    toneChecker(aannaSentence)
         // this is fourth
     }
 
