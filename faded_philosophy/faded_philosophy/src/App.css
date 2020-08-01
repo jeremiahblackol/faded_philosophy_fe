@@ -6,11 +6,20 @@
   /* height: 99vh; */
 }
 
+header {
+  display: flex;
+  
+  /* justify-content: space-between; */
+  /* margin-top: 1em; */
+}
+
+
 header h1 {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
   font-size: 5em;
   line-height: 0em;
   text-shadow: 0 0 4px red, 0 0 4px red, 0 0 4px red, 0 0 4px red; 
+  margin-top: .5em;
   /* color: rgb(8, 212, 195) ; */
 }
 
@@ -41,6 +50,44 @@ header h2 {
 .dropdownContainer p {
   margin-top: 0;
   margin-left: -2em;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  padding-top: .5em;
+  /* justify-items: center; */
+  /* top: 0; */
+  right: 0;
+  position: absolute;
+}
+
+.navButton {
+  width: 98%;
+  height: 1.9em;
+  border: none;
+  background-color: red;
+  margin-bottom: .4em;
+  right: 0;
+  margin-left: .1em;
+  font-size: .8em;
+  font-weight: bolder;
+  color: white;
+}
+
+.navButton span {
+  font-size: .6em;
+  background-color: red;
+}
+
+.navButton:hover {
+  background-color: blueviolet;
+  cursor: pointer
+}
+
+.navButton span:hover {
+  background-color: blueviolet;
+  cursor: pointer
 }
 
 
