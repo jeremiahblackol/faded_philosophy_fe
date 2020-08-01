@@ -1,13 +1,13 @@
 import React from "react";
-import Home from "../Home";
+import Header from "./Header";
 import { render } from "@testing-library/react";
 
 
 
-describe("Home", () => {
+describe("Header", () => {
 
-  it("Should render header", () => {
-    const { getByText } = render(<Home />);
+  it("Should render title", () => {
+    const { getByText } = render(<Header />);
 
     const title = getByText('Faded Philosophy');
 

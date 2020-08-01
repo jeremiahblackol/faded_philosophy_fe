@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import './App.css';
-import Home from './Home/Home'
+import Home from './Home'
 import { toneChecker } from './ApiCalls'
 
-const text = "Hello all you good people, I hope you are having a great day!"
-const angryText = "I hated all of the dumb shit"
+
+const aannaSentence = "I feel like the world is too rough, but I'm excited about tomorrow"
+const djavan = "Whats up I dont care I done even know what the hell its gonna do"
 
 class App extends Component {
   constructor() {
@@ -19,7 +20,7 @@ class App extends Component {
 
   
 toneRequest = () => {
-    toneChecker(angryText)
+    toneChecker(djavan)
         // this is fourth
     }
 
