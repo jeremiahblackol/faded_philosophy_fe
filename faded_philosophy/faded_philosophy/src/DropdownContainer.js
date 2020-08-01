@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import "./App.css"
 
+// rename - this should be about all the things to set the "tone"
+// this (and other main components) should be rendered in main container based on URL
+
+
 class DropdownContainer extends Component {
     constructor() {
         super();
@@ -20,31 +24,40 @@ class DropdownContainer extends Component {
         // make it so state updates on change
         return (
             <form className="dropdownContainer">
-                <select 
-                name="userMood"
-                onChange={this.handleChange}>
-                    <option value="">MOOD</option>
-                    <option value="HAPPY">HAPPY</option>
-                    <option value="SAD">SAD</option>
-                    <option value="EXCITED">EXCITED</option>
-                    <option value="ANGRY">ANGRY</option>
-                </select>
-                <select 
-                name="userVibe"
-                onChange={this.handleChange}>
-                    <option value="">VIBE</option>
-                    <option value="CHILL">CHILL</option>
-                    <option value="PARTY">PARTY</option>
-                    <option value="THINK">THINK</option>
-                    <option value="LET GO">LET GO</option>
-                </select> 
-                <select 
-                name="userHue"
-                onChange={this.handleChange}>
-                    <option value="">Light or Dark</option>
-                    <option value="LIGHT">LIGHT</option>
-                    <option value="DARK">DARK</option>
-                </select>          
+                <section>
+                    <select 
+                    name="userMood"
+                    onChange={this.handleChange}>
+                        <option value="">MOOD</option>
+                        <option value="HAPPY">HAPPY</option>
+                        <option value="SAD">SAD</option>
+                        <option value="EXCITED">EXCITED</option>
+                        <option value="ANGRY">ANGRY</option>
+                    </select>
+                    <p>PLAceholder text 1</p>
+                </section>
+                <section>
+                    <select 
+                    name="userVibe"
+                    onChange={this.handleChange}>
+                        <option value="">VIBE</option>
+                        <option value="CHILL">CHILL</option>
+                        <option value="PARTY">PARTY</option>
+                        <option value="THINK">THINK</option>
+                        <option value="LET GO">LET GO</option>
+                    </select> 
+                    <p>PLAceholder text 2</p>
+                </section>
+                <section>
+                    <select 
+                    name="userHue"
+                    onChange={this.handleChange}>
+                        <option value="">Light or Dark</option>
+                        <option value="LIGHT">LIGHT</option>
+                        <option value="DARK">DARK</option>
+                    </select>
+                    <p>PLAceholder text 3</p>  
+                </section>      
             </form>
         )
     }
