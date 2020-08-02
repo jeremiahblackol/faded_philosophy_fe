@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import './App.css';
 import Home from './Home'
+import Header from './Header'
+import Strains from "./Strains"
+import DropdownContainer from "./DropdownContainer"
+import { Route, Switch } from 'react-router-dom';
 import { toneChecker } from './ApiCalls'
 
 
@@ -13,7 +17,12 @@ class App extends Component {
     this.state = {
       userStatement: '',
       analyzedTone: '',
+      location: ''
     }
+  }
+
+  setLocation = (currentLocation) => {
+    this.setState({ location: currentLocation})
   }
 
   // i want the program to fetch some new data every time it renders
@@ -43,12 +52,12 @@ componentDidMount = () => {
     }
   }
 
-
   render() {
     this.toneRequest("", 3)
     return (
       <div className="App">
-        <Home />
+        <Header />
+        
       </div>
     );
   }

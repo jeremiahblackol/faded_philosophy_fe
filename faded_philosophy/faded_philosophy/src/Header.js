@@ -1,53 +1,90 @@
-import React from "react";
+import React, {Component} from "react";
 import "./App.css"
-import { BrowserRouter, Route, NavLink } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import Strains from "./Strains"
-import Home from "./Home"
+import DropdownContainer from "./DropdownContainer";
+import Philosophers from "./Philosophers"
+import Spirits from "./Spirits"
 
 
-const Header = () => {
+class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      // location: '',
+    }
+  }
+
+    updateLocation = (event) => {
+      event.preventDefault()
+      // this.setState({ location: event.target.name })
+      this.props.setLocation(this.state.location)
+    }
+
+    render(props) {
     return (
-      <BrowserRouter>
+      <Router>
           <header>
             <section>
               <h1>FADED</h1>
               <h2>PHILOSOPHY</h2>
             </section>
             <nav>
-              <NavLink to={"/"}>
-                <button className="navButton">
+              <Link to={"/"}>
+                <button 
+                name="/"
+                className="navButton">
                     HOME
                 </button>
-              </NavLink> 
-              {/* <Route exact path="/" render={() => <Home />} /> */}
-              <NavLink to={"/strains"}>
-                <button className="navButton">
+              </Link> 
+              <Link to={"/strains"}>
+                <button  
+                name="/strains"
+                className="navButton">
                     STRAINS
                 </button>
-              </NavLink> 
-              <NavLink to={"/spirits"}>
-                <button className="navButton">
+              </Link> 
+              <Link to={"/spirits"}>
+                <button  
+                name="/spirits"
+                className="navButton">
                     SPIRITS
                 </button>
-              </NavLink> 
-              <NavLink to={"/philosophers"}>
-                <button className="navButton">
-                    <span>PHILOSOPHERS</span>
+              </Link> 
+              <Link to={"/philosophers"}>
+                <button 
+                name="/philosophers" 
+                className="otherNavButton">
+                    PHILOSOPHERS
                 </button>
-              </NavLink> 
-              {/* <Route exact path="/strains" render={() => <Strains />} /> */}
-              {/*
-                <Route exact path="/spirits" render={() => <Spirits />} />
-              
-
-              // always want it to render the main component, pass props in to tell it what to render
-              //inside the main
-              <Route exact path="/philosophers" render={() => <Philosophers />} /> 
-              */}
+              </Link> 
             </nav>
           </header>
-        </BrowserRouter>
+          <div>
+          <Switch>
+              <Route exact path="/">
+                <DropdownContainer />
+              </Route>
+              <Route path="/strains">
+                <Strains />
+              </Route>
+              <Route exact path="/spirits">
+                <Spirits />
+              </Route>
+              <Route path="/philosophers">
+                <Philosophers />
+              </Route>
+            </Switch>
+            </div>
+        </Router>
     )
+  }
 }
 
 export default Header;
+
