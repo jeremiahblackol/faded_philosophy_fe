@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './App.css';
-import Home from './Home'
 import Header from './Header'
 import Strains from "./Strains"
 import DropdownContainer from "./DropdownContainer"
@@ -57,7 +56,7 @@ componentDidMount = () => {
     return (
       <div className="App">
         <Header />
-        
+
       </div>
     );
   }

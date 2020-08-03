@@ -42,9 +42,20 @@ header h2 {
 }
 
 .dropdownContainer select {
-  height: 4.8em;
-  font-size: 60%;
-  width: 60%
+  height: 1.4em;
+  font-size: 2.85em;
+  width: 60%;
+  background-color: white;
+  margin-bottom: .5em;
+  box-shadow: -4px 4px gray;
+  outline: none;
+  border: none;
+  padding-left: .3em;
+}
+
+.dropdownContainer h3 {
+  margin-top: 0;
+  margin-bottom: 2em;
 }
 
 .dropdownContainer p {
