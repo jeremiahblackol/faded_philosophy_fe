@@ -1,15 +1,3 @@
-export const strains = [
-
-]
-
-export const philosophers = [
-    aesthetics = {},
-    epistemology = {},
-    ethics = {},
-    logic = {},
-    metaphysics = {},
-]
-
 export const combinations = {
     anger: {
         philosopher: {

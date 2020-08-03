@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@700&display=swap');
+
+* {
+  background-color: #cccccc;
+  /* height: 99vh; */
+}
+
+header {
+  display: flex;
+  
+  /* justify-content: space-between; */
+  /* margin-top: 1em; */
+}
+
+
+header h1 {
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-size: 5em;
+  line-height: 0em;
+  text-shadow: 0 0 4px red, 0 0 4px red, 0 0 4px red, 0 0 4px red; 
+  margin-top: .5em;
+  color: black;
+  /* color: rgb(8, 212, 195) ; */
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+header h1:hover {
+  text-shadow: 0 0 4px blueviolet, 0 0 4px blueviolet, 0 0 4px blueviolet, 0 0 4px blueviolet; 
+}
+
+header h2 {
+  line-height: 0;
+  font-size: 2.68em;
+  font-family: 'Philosopher', sans-serif;
+  color: black;
+}
+
+.dropdownContainer {
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  width: 100%;
+}
+
+.dropdownContainer section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropdownContainer select {
+  height: 1.4em;
+  font-size: 2.85em;
+  width: 99%;
+  background-color: white;
+  margin-bottom: .5em;
+  box-shadow: -4px 4px gray;
+  outline: none;
+  border: none;
+  padding-left: .3em;
+}
+
+.dropdownContainer h3 {
+  margin-top: 0;
+  margin-bottom: 2em;
+}
+
+.dropdownContainer p {
+  margin-top: 0;
+  margin-left: -2em;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  padding-top: .5em;
+  /* justify-items: center; */
+  /* top: 0; */
+  right: 0;
+  position: absolute;
+}
+
+.navButton {
+  width: 98%;
+  height: 1.9em;
+  border: none;
+  background-color: red;
+  margin-bottom: .4em;
+  right: 0;
+  margin-left: .1em;
+  font-size: .8em;
+  font-weight: bolder;
+  color: white;
+}
+
+.otherNavButton {
+  font-size: .6em;
+  background-color: red;
+  width: 98%;
+  height: 2.9em;
+  border: none;
+  background-color: red;
+  margin-bottom: .4em;
+  right: 0;
+  margin-left: .1em;
+  font-weight: bolder;
+  color: white;
+}
+
+.navButton:hover {
+  background-color: blueviolet;
+  cursor: pointer
+}
+
+.otherNavButton:hover {
+  background-color: blueviolet;
+  cursor: pointer
+}
+
+.submitButton {
+  height: 2.2em;
+  font-size: 1.7em;
+  width: 99%;
+  background-color: red;
+  color: white;
+  margin-bottom: .5em;
+  box-shadow: -4px 4px black;
+  outline: none;
+  border: none;
+  padding-left: .3em;
+}
+
+.submitButton:hover {
+  background-color: blueviolet;
+  cursor: pointer;
+  box-shadow: -4px 4px gray;
+
+}
+
+
+
+
+
+
+ .App {
+  /* text-align: center; */
+  height: 99vh;
+  padding-left: .5em;
+}
+/*
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+} */
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
