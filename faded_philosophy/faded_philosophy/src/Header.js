@@ -4,6 +4,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Link
 } from "react-router-dom";
 
 import Navigation from "./Navigation"
@@ -28,8 +29,11 @@ class Header extends Component {
       <Router>
           <header>
             <section>
-              <h1>FADED</h1>
-              <h2>PHILOSOPHY</h2>
+              <Link 
+              to="/">
+                <h1>FADED</h1>
+                <h2>PHILOSOPHY</h2>
+              </Link>
             </section>
             <Navigation />
           </header>

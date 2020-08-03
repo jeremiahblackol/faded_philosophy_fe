@@ -20,13 +20,25 @@ header h1 {
   line-height: 0em;
   text-shadow: 0 0 4px red, 0 0 4px red, 0 0 4px red, 0 0 4px red; 
   margin-top: .5em;
+  color: black;
   /* color: rgb(8, 212, 195) ; */
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+header h1:hover {
+  text-shadow: 0 0 4px blueviolet, 0 0 4px blueviolet, 0 0 4px blueviolet, 0 0 4px blueviolet; 
 }
 
 header h2 {
   line-height: 0;
   font-size: 2.68em;
   font-family: 'Philosopher', sans-serif;
+  color: black;
 }
 
 .dropdownContainer {
@@ -44,7 +56,7 @@ header h2 {
 .dropdownContainer select {
   height: 1.4em;
   font-size: 2.85em;
-  width: 60%;
+  width: 99%;
   background-color: white;
   margin-bottom: .5em;
   box-shadow: -4px 4px gray;
@@ -108,6 +120,26 @@ nav {
 .otherNavButton:hover {
   background-color: blueviolet;
   cursor: pointer
+}
+
+.submitButton {
+  height: 2.2em;
+  font-size: 1.7em;
+  width: 99%;
+  background-color: red;
+  color: white;
+  margin-bottom: .5em;
+  box-shadow: -4px 4px black;
+  outline: none;
+  border: none;
+  padding-left: .3em;
+}
+
+.submitButton:hover {
+  background-color: blueviolet;
+  cursor: pointer;
+  box-shadow: -4px 4px gray;
+
 }
 
 

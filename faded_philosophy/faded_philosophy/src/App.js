@@ -28,7 +28,7 @@ class App extends Component {
 
   
 toneRequest = () => {
-    toneChecker(djavan)
+    toneChecker("ANGRY, THINK, DARK")
         // this is fourth
     }
 

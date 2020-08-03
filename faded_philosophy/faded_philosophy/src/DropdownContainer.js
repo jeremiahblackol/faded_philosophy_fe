@@ -37,7 +37,7 @@ class DropdownContainer extends Component {
                         <option value="EXCITED">EXCITED</option>
                         <option value="ANGRY">ANGRY</option>
                     </select>
-                    <p>How are you feelin'?</p>
+                    {/* <p>How are you feelin'?</p> */}
                 </section>
                 <section>
                     <select 
@@ -49,7 +49,7 @@ class DropdownContainer extends Component {
                         <option value="THINK">THINK</option>
                         <option value="LET GO">LET GO</option>
                     </select> 
-                    <p>Set the vibe...</p>
+                    {/* <p>Set the vibe...</p> */}
                 </section>
                 <section>
                     <select
@@ -59,8 +59,13 @@ class DropdownContainer extends Component {
                         <option value="LIGHT">LIGHT</option>
                         <option value="DARK">DARK</option>
                     </select>
-                    <p></p>  
+                    {/* <p></p>   */}
                 </section>      
+                    <button 
+                    type="button"
+                    className="submitButton">
+                        FIND YOUR PHILOSOPHY
+                    </button>
             </form>
         )
     }
