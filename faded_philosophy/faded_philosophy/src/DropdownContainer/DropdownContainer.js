@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import "../App/App.css"
+import { toneChecker } from '../ApiCalls'
 
-// rename - this should be about all the things to set the "tone"
-// this (and other main components) should be rendered in main container based on URL
-
+// then i want to say if tone exists, render a new component
 
 class DropdownContainer extends Component {
     constructor() {
@@ -12,6 +11,8 @@ class DropdownContainer extends Component {
            userMood: "",
            userVibe: "",
            userHue: "",
+           userSentence: "",
+           tone: {}
         }
     }
 
@@ -20,13 +21,27 @@ class DropdownContainer extends Component {
         this.setState({ [event.target.name]: event.target.value })
     }
 
+    getTone = async () => {
+        let checkedTone;
+        if (this.state.userMood && this.state.userVibe && this.state.userHue && !this.state.userSentence) {
+            checkedTone = await toneChecker(this.state.userMood, this.state.userVibe, this.state.userHue)
+            this.setState(prevState => ({...prevState, tone: checkedTone.document_tone.tones}))
+        }
+
+        if (this.state.userSentence)
+            checkedTone = await toneChecker(this.state.userSentence)
+            this.setState(prevState => ({...prevState, tone: checkedTone.document_tone.tones}))
+        }
+
+    
+
     render() {
-        // make it so state updates on change
         return (
             <form className="dropdownContainer">
                 <section className="containerTitle">
                     <h3>Please select from the following options:</h3>
                 </section>
+                    <h4>or, tell us what's on your mind below!</h4>
                 <section>
                     <select 
                     name="userMood"
@@ -37,7 +52,6 @@ class DropdownContainer extends Component {
                         <option value="EXCITED">EXCITED</option>
                         <option value="ANGRY">ANGRY</option>
                     </select>
-                    {/* <p>How are you feelin'?</p> */}
                 </section>
                 <section>
                     <select 
@@ -49,7 +63,6 @@ class DropdownContainer extends Component {
                         <option value="THINK">THINK</option>
                         <option value="LET GO">LET GO</option>
                     </select> 
-                    {/* <p>Set the vibe...</p> */}
                 </section>
                 <section>
                     <select
@@ -59,9 +72,18 @@ class DropdownContainer extends Component {
                         <option value="LIGHT">LIGHT</option>
                         <option value="DARK">DARK</option>
                     </select>
-                    {/* <p></p>   */}
+                </section> 
+                <section>
+                    <input 
+                    className="userTextInput"
+                    type="text"
+                    name="userSentence"
+                    placeholder="How's it going???"
+                    onChange={this.handleChange}>     
+                    </input>
                 </section>      
                     <button 
+                    onClick={this.getTone}
                     type="button"
                     className="submitButton">
                         FIND YOUR PHILOSOPHY
@@ -73,99 +95,3 @@ class DropdownContainer extends Component {
 
 export default DropdownContainer;
 
-/*
-
-import React, {Component} from 'react';
-// import '../apiCalls'
-import { postShoe } from '../ApiCalls';
-
-class SubmitShoeForm extends Component {
-    constructor() {
-        super();
-        this.state = {
-            id: 0,
-            brand: '',
-            model: '',
-            colorway: '',
-            retail_price: 0,
-            submitted: false
-        }
-    }
-
-    postNewShoe = (event) => {
-        event.preventDefault();
-        const brand = this.state.brand;
-        const model = this.state.model;
-        const colorway = this.state.colorway;
-        const price = this.state.retail_price;
-        postShoe(brand, model, colorway, price);
-        this.setState({ submitted: true })
-    }
-
-    clearInputs = () => {
-        this.setState({ 
-            id: 0,
-            brand: '',
-            model: '',
-            colorway: '',
-            retail_price: 0,
-            submitted: false 
-        })
-    }
-
-    handleSubmit = (event) => {
-        event.preventDefault()
-        this.setState({ submitted: true })
-    }
-
-
-
-    render() {
-        if (!this.state.submitted) {
-        return (
-        <form onSubmit={this.handleSubmit} className="defineShoeForm">
-            
-            <input
-                className="colorInput"
-                name="colorway"
-                value={this.state.colorway} 
-                onChange={this.handleChange} 
-                type='text'
-                placeholder='COLOR' required>
-            </input>
-            <input
-                className="price"
-                name="retail_price"
-                value={this.state.retail_price} 
-                onChange={this.handleChange} 
-                type='number' min="0" max="1000000"
-                placeholder='Price (in dollars)' required>
-            </input>
-            <input
-                className="model"
-                name="model"
-                value={this.state.model} 
-                onChange={this.handleChange} 
-                type='text'
-                placeholder='MODEL' required>
-            </input>
-            <button type="submit" onClick={this.postNewShoe} className="submitButton" >
-                Submit Sneaker
-            </button>
-        </form>
-        )
-        } else {
-            return (
-                <section>
-                    <h2>Submission has been added</h2>
-                    <button onClick={this.clearInputs}>Submit another shoe</button> 
-                    
-                </section>
-            )
-        }
-    }
-}
-
-export default SubmitShoeForm;
-
-*/

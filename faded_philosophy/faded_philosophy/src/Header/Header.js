@@ -15,14 +15,6 @@ import Spirits from "../Spirits"
 
 
 class Header extends Component {
-  
-  // }
-
-    // updateLocation = (event) => {
-    //   event.preventDefault()
-    //   // this.setState({ location: event.target.name })
-    //   this.props.setLocation(this.state.location)
-    // }
 
     render() {
     return (
