@@ -24,6 +24,9 @@ class DropdownContainer extends Component {
         // make it so state updates on change
         return (
             <form className="dropdownContainer">
+                <section className="containerTitle">
+                    <h3>Please select from the following options:</h3>
+                </section>
                 <section>
                     <select 
                     name="userMood"
@@ -34,7 +37,7 @@ class DropdownContainer extends Component {
                         <option value="EXCITED">EXCITED</option>
                         <option value="ANGRY">ANGRY</option>
                     </select>
-                    <p>PLAceholder text 1</p>
+                    {/* <p>How are you feelin'?</p> */}
                 </section>
                 <section>
                     <select 
@@ -46,18 +49,23 @@ class DropdownContainer extends Component {
                         <option value="THINK">THINK</option>
                         <option value="LET GO">LET GO</option>
                     </select> 
-                    <p>PLAceholder text 2</p>
+                    {/* <p>Set the vibe...</p> */}
                 </section>
                 <section>
-                    <select 
+                    <select
                     name="userHue"
                     onChange={this.handleChange}>
-                        <option value="">Light or Dark</option>
+                        <option value="">VALUE</option>
                         <option value="LIGHT">LIGHT</option>
                         <option value="DARK">DARK</option>
                     </select>
-                    <p>PLAceholder text 3</p>  
+                    {/* <p></p>   */}
                 </section>      
+                    <button 
+                    type="button"
+                    className="submitButton">
+                        FIND YOUR PHILOSOPHY
+                    </button>
             </form>
         )
     }

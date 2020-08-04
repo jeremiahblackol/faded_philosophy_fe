@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import "./App.css"
+import "../App/App.css"
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,22 +7,16 @@ import {
   Link
 } from "react-router-dom";
 
-import Navigation from "./Navigation"
-import Strains from "./Strains"
-import DropdownContainer from "./DropdownContainer";
-import Philosophers from "./Philosophers"
-import Spirits from "./Spirits"
+import Navigation from "../Navigation/Navigation"
+import Strains from "../Strains"
+import DropdownContainer from "../DropdownContainer/DropdownContainer";
+import Philosophers from "../Philosophers"
+import Spirits from "../Spirits"
+import Pairings from "../Pairings/Pairings"
+
 
 
 class Header extends Component {
-  
-  // }
-
-    // updateLocation = (event) => {
-    //   event.preventDefault()
-    //   // this.setState({ location: event.target.name })
-    //   this.props.setLocation(this.state.location)
-    // }
 
     render() {
     return (
@@ -42,13 +36,13 @@ class Header extends Component {
                 <Route exact path="/">
                   <DropdownContainer />
                 </Route>
-                <Route path="/strains">
+                <Route exact path="/strains">
                   <Strains />
                 </Route>
                 <Route exact path="/spirits">
                   <Spirits />
                 </Route>
-                <Route path="/philosophers">
+                <Route exact path="/philosophers">
                   <Philosophers />
                 </Route>
             </Switch>

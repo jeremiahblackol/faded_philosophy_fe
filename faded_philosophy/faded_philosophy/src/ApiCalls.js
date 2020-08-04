@@ -1,5 +1,5 @@
-export const toneChecker = (sentence) => {
-    fetch(`http://localhost:5000/tone/${sentence}`)
-        .then(response => response.json())
-        .then(data => console.log("api call", data))
+export const toneChecker = async (sentence) => {
+    const response = await fetch(`http://localhost:5000/tone/${sentence}`)
+    const tone = await response.json()
+    return tone
 }
