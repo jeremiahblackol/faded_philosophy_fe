@@ -14,11 +14,6 @@ class Pairings extends Component{
         this.setState({ tone: this.props.tone })
     }
 
-    findRelativeData() {
-        console.log("tone in pairings", this.props.tone[0].tone_id)
-        console.log(combinations)
-    }
-
         render() {
            return this.props.tone.map((checkedTone) => {
                let tonePairing = combinations[checkedTone.tone_id]
