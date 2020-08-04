@@ -1,6 +1,15 @@
 import React, { Component } from "react";
 import "../App/App.css"
 import { toneChecker } from '../ApiCalls'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
+
+  import Pairings from "../Pairings/Pairings"
+
 
 // then i want to say if tone exists, render a new component
 
@@ -12,7 +21,8 @@ class DropdownContainer extends Component {
            userVibe: "",
            userHue: "",
            userSentence: "",
-           tone: {}
+           tone: {},
+           isLoaded: false
         }
     }
 
@@ -25,19 +35,25 @@ class DropdownContainer extends Component {
         let checkedTone;
         if (this.state.userMood && this.state.userVibe && this.state.userHue && !this.state.userSentence) {
             checkedTone = await toneChecker(this.state.userMood, this.state.userVibe, this.state.userHue)
-            this.setState(prevState => ({...prevState, tone: checkedTone.document_tone.tones}))
+            this.setState(prevState => ({...prevState, tone: checkedTone.document_tone.tones, isLoaded: true}))
+            console.log("tone in 1st if", checkedTone)
         }
 
-        if (this.state.userSentence)
+        if (this.state.userSentence) {
             checkedTone = await toneChecker(this.state.userSentence)
-            this.setState(prevState => ({...prevState, tone: checkedTone.document_tone.tones}))
+            this.setState(prevState => ({...prevState, tone: checkedTone.document_tone.tones, isLoaded:true}))
+            console.log("tone in function", checkedTone)
         }
+    }
 
     
 
     render() {
         return (
-            <form className="dropdownContainer">
+            <Router>
+                <section>
+            <form 
+            className="dropdownContainer">
                 <section className="containerTitle">
                     <h3>Please select from the following options:</h3>
                 </section>
@@ -81,14 +97,24 @@ class DropdownContainer extends Component {
                     placeholder="How's it going???"
                     onChange={this.handleChange}>     
                     </input>
-                </section>      
-                    <button 
-                    onClick={this.getTone}
-                    type="button"
-                    className="submitButton">
-                        FIND YOUR PHILOSOPHY
-                    </button>
+                </section>  
+                    <Link to="/pairings">   
+                        <button
+                        onClick={this.getTone} 
+                        type="button"
+                        className="submitButton">
+                            FIND YOUR PHILOSOPHY
+                        </button>
+                    </Link>
+                    {this.state.isLoaded ? 
+                        <Route exact path="/pairings">
+                            <Pairings tone={this.state.tone}/>
+                        </Route> : null
+                    }   
+                    
             </form>
+            </section>
+            </Router>
         )
     }
 }

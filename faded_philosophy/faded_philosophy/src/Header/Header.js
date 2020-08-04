@@ -12,6 +12,8 @@ import Strains from "../Strains"
 import DropdownContainer from "../DropdownContainer/DropdownContainer";
 import Philosophers from "../Philosophers"
 import Spirits from "../Spirits"
+import Pairings from "../Pairings/Pairings"
+
 
 
 class Header extends Component {
@@ -34,13 +36,13 @@ class Header extends Component {
                 <Route exact path="/">
                   <DropdownContainer />
                 </Route>
-                <Route path="/strains">
+                <Route exact path="/strains">
                   <Strains />
                 </Route>
                 <Route exact path="/spirits">
                   <Spirits />
                 </Route>
-                <Route path="/philosophers">
+                <Route exact path="/philosophers">
                   <Philosophers />
                 </Route>
             </Switch>

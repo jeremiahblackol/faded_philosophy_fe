@@ -214,4 +214,5 @@ export const combinations = {
             img_url:"https://images.ctfassets.net/qe08557i7rmu/1BVYvBS3hS2ammSoa2CyCu/a27e0aeaa54986c77ed56682f7334251/0E1866D8-C598-4252-9406-D19E74075F99.jpeg?w=1600&fm=jpg",
             effects: ["lower calories", "aware", "care more about the environment"] 
         },
+    }
 }

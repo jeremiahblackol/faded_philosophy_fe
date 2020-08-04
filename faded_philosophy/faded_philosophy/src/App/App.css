@@ -161,6 +161,25 @@ h4 {
   margin-top: 0em;
 }
 
+.pairSection {
+  width: 97%;
+  margin-left: .3em;
+  margin-right: .3em;
+}
+
+.pairSection section {
+  width: 28%;
+  display: flex;
+  flex-direction: column;
+}
+
+.pairSection img {
+  width: 60%;
+  height: 33%;
+}
+
+
+
 
 
 
